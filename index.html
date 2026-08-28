@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mural Digital - Naturae Nutribar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,159 +12,202 @@
       padding: 0;
     }
     body {
-      background: radial-gradient(circle at top right, #062b16, #021208, #000000);
-      color: #ffffff;
+      background-color: #ede0d4;
+      color: #332b25;
       font-family: 'Montserrat', sans-serif;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
       display: flex;
+      position: relative;
     }
+
+    /* Sombra de Folhagem no Canto Superior Esquerdo */
+    .leaf-shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32vw;
+      max-width: 450px;
+      pointer-events: none;
+      opacity: 0.35;
+      filter: blur(2px);
+      z-index: 1;
+    }
+
     .tv-container {
       display: flex;
       width: 100%;
       height: 100%;
-      padding: 3vh 2.5vw;
-      gap: 2.5vw;
-    }
-
-    /* Coluna de Vídeo */
-    .video-section {
-      flex: 0 0 35%;
-      height: 100%;
-      background: #000;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 4vh 4vw;
+      gap: 4vw;
       position: relative;
-      border: 2px solid rgba(34, 197, 94, 0.4);
-    }
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .progress-bar-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.15);
-    }
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #16a34a, #22c55e, #4ade80);
-      transition: width 0.1s linear;
+      z-index: 2;
     }
 
-    /* Coluna Informativa */
+    /* Coluna Esquerda: Informações & Logo */
     .info-section {
-      flex: 1;
+      flex: 1.1;
       height: 100%;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      border-radius: 26px;
-      padding: 3.5vh 3vw;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1vh 1vw;
       overflow: hidden;
     }
 
-    /* Cabeçalho */
-    .header {
+    .header-logo-area {
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      gap: 25px;
-      padding-bottom: 2vh;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-    .header-text {
-      flex: 1;
-    }
-    .badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #15803d, #22c55e);
-      color: #ffffff;
-      font-size: clamp(0.75rem, 1vw, 1.05rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 18px;
-      border-radius: 50px;
-      margin-bottom: 1vh;
-      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
-    }
-    .header h1 {
-      font-size: clamp(1.4rem, 2.2vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.2;
-      color: #f8fafc;
-      letter-spacing: -0.5px;
-    }
-    .header h1 span {
-      color: #4ade80;
+      margin-bottom: 2vh;
     }
 
     .logo-img {
-      height: clamp(85px, 14vh, 140px);
-      max-width: 260px;
+      max-height: 16vh;
+      max-width: 80%;
       object-fit: contain;
-      filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
     }
 
     /* Área de Texto Auto-Ajustável */
     .caption-container {
       flex: 1;
-      margin-top: 2vh;
+      width: 100%;
       overflow: hidden;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      height: 100%;
+      justify-content: center;
     }
     .caption-box {
       width: 100%;
-      color: #ffffff;
+      color: #3e3228;
       white-space: pre-line;
       word-break: break-word;
       line-height: 1.45;
-      font-weight: 500;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    /* Coluna Direita: Vídeo com Moldura Dupla */
+    .video-wrapper {
+      flex: 0 0 38%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Camadas decorativas da moldura */
+    .frame-layer-green {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      width: 96%;
+      height: 96%;
+      background-color: #4a6741;
+      border-radius: 8px;
+      transform: translate(-10px, 10px);
+    }
+    .frame-layer-terracotta {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      width: 96%;
+      height: 96%;
+      background-color: #be7556;
+      border-radius: 8px;
+      transform: translate(10px, 10px);
+    }
+
+    .video-card {
+      position: relative;
+      width: 95%;
+      height: 95%;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 15px 35px rgba(60, 40, 20, 0.18);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .video-inner {
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #be7556, #4a6741);
+      transition: width 0.1s linear;
     }
   </style>
 </head>
 <body>
 
-  <div class="tv-container">
-    <div class="video-section">
-      <video id="player" autoplay playsinline muted preload="auto">
-        <source id="video-source" src="video_1.mp4" type="video/mp4">
-      </video>
-      <div class="progress-bar-container">
-        <div class="progress-bar" id="progress"></div>
-      </div>
-    </div>
+  <!-- Sombra Vetorial de Folhagem de Palmeira -->
+  <svg class="leaf-shadow" viewBox="0 0 400 400" fill="#2b231d" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 C50 100 120 160 220 200 C180 180 140 140 100 80 Z" />
+    <path d="M0 40 C70 120 150 190 260 220 C200 190 150 150 90 80 Z" />
+    <path d="M0 90 C80 160 170 210 290 230 C220 200 160 150 80 100 Z" />
+    <path d="M0 140 C90 190 190 230 320 240 C230 210 160 160 70 120 Z" />
+    <path d="M0 190 C100 220 200 240 330 230 C240 210 160 170 60 140 Z" />
+    <path d="M0 240 C100 240 190 230 300 200 C220 190 150 150 50 140 Z" />
+    <path d="M0 0 Q180 160 360 220 Q160 180 0 0 Z" opacity="0.6"/>
+  </svg>
 
+  <div class="tv-container">
+    <!-- Lado Esquerdo: Logo e Legenda -->
     <div class="info-section">
-      <div class="header">
-        <div class="header-text">
-          <span class="badge">Nutrição & Sabor</span>
-          <h1>Naturae <span>Nutribar</span></h1>
-        </div>
+      <div class="header-logo-area">
         <img src="logo.png" alt="Logo Naturae Nutribar" class="logo-img" onerror="this.style.display='none'">
       </div>
 
       <div class="caption-container" id="caption-container">
         <div class="caption-box" id="caption-text">
           Carregando informações...
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado Direito: Vídeo Moldurado -->
+    <div class="video-wrapper">
+      <div class="frame-layer-green"></div>
+      <div class="frame-layer-terracotta"></div>
+      <div class="video-card">
+        <div class="video-inner">
+          <video id="player" autoplay playsinline muted preload="auto">
+            <source id="video-source" src="video_1.mp4" type="video/mp4">
+          </video>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progress"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -189,14 +232,14 @@
       
       if (!containerW || !containerH) return;
 
-      let low = 10;
+      let low = 12;
       let high = 65;
       let optimal = low;
 
       for (let i = 0; i < 10; i++) {
         const mid = (low + high) / 2;
         captionText.style.fontSize = mid + 'px';
-        captionText.style.lineHeight = (mid * 1.35) + 'px';
+        captionText.style.lineHeight = (mid * 1.38) + 'px';
 
         const overflowH = captionText.scrollHeight > containerH;
         const overflowW = captionText.scrollWidth > containerW;
@@ -210,9 +253,10 @@
       }
 
       captionText.style.fontSize = optimal + 'px';
-      captionText.style.lineHeight = (optimal * 1.35) + 'px';
+      captionText.style.lineHeight = (optimal * 1.38) + 'px';
     }
 
+    // Tratamento de reconexão e proteção contra quedas
     player.addEventListener('error', () => {
       consecutiveErrors++;
       if (consecutiveErrors >= maxConsecutiveErrors) {
