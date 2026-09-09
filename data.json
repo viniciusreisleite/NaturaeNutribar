@@ -12,6 +12,16 @@
     "arquivo": "media_1.mp4"
   },
   {
+    "id": "DVeQ1zzjmY6",
+    "url": "https://www.instagram.com/naturae_nutribar/reel/DVeQ1zzjmY6/",
+    "caption": "Naturaê Nutribar on Instagram: \"Confira o nosso horário de funcionamento e venha conhecer o nosso cardápio 💚\"",
+    "tipo": "video",
+    "arquivo": "media_2.mp4",
+    "badge": "",
+    "cor": "#ff1744",
+    "perfil": "naturae_nutribar"
+  },
+  {
     "id": 2,
     "url": "https://www.instagram.com/naturae_nutribar/p/DdCmhnnFg6M/",
     "caption": "No Naturaê, você encontra opções pensadas para acompanhar sua rotina de um jeito mais leve, prático e gostoso.\n\nPode ser no café da manhã, antes do treino, depois dele, no meio da tarde ou naquela pausa que você precisa fazer no meio da correria.\n\nE quando quiser ainda mais praticidade, os combos ajudam a deixar tudo mais fácil.\n\nA ideia é simples: fazer boas escolhas sem transformar isso em um peso na sua rotina.\". ",
@@ -22,6 +32,16 @@
     "media_file": "media_3.jpg",
     "video_file": "media_3.jpg",
     "arquivo": "media_3.jpg"
+  },
+  {
+    "id": "Dc0wxD2p17H",
+    "url": "https://www.instagram.com/naturae_nutribar/reel/Dc0wxD2p17H/",
+    "caption": "Naturaê Nutribar on Instagram: \"Opções pensadas para deixar sua rotina mais prática, gostosa e completa.\n\nSeja antes do treino, depois dele ou naquela pausa do dia, tem sempre um combo pronto esperando por você.\n\nEstamos te esperando no Naturaê, escolha o seu e venha experimentar de perto.\n\n📍 Rua Pedro Ribeiro Arantes, a Rua da Saúde\nDentro do complexo do Zico10 e Studio GB\"",
+    "tipo": "video",
+    "arquivo": "media_4.mp4",
+    "badge": "",
+    "cor": "#ff1744",
+    "perfil": "naturae_nutribar"
   },
   {
     "id": 3,
@@ -69,7 +89,7 @@
     "media": "media_9.mp4",
     "media_file": "media_9.mp4",
     "video_file": "media_9.mp4",
-    "arquivo": "media_9.mp4"
+    "arquivo": "media_8.mp4"
   },
   {
     "id": 7,
@@ -81,7 +101,7 @@
     "media": "media_11.jpg",
     "media_file": "media_11.jpg",
     "video_file": "media_11.jpg",
-    "arquivo": "media_11.jpg"
+    "arquivo": "media_9.jpg"
   },
   {
     "id": 8,
@@ -93,6 +113,6 @@
     "media": "media_12.jpg",
     "media_file": "media_12.jpg",
     "video_file": "media_12.jpg",
-    "arquivo": "media_12.jpg"
+    "arquivo": "media_10.jpg"
   }
 ]
